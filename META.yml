@@ -22,4 +22,4 @@ requires:
   parent: 0
 resources:
   repository: http://github.com/gray/posix-rt-spawn
-version: 0.03
+version: 0.04
