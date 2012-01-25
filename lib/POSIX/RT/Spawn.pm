@@ -6,7 +6,7 @@ use parent qw(Exporter);
 
 use XSLoader;
 
-our $VERSION    = '0.06';
+our $VERSION    = '0.07';
 our $XS_VERSION = $VERSION;
 $VERSION = eval $VERSION;
 
@@ -30,6 +30,7 @@ POSIX::RT::Spawn - Perl interface to the posix_spawn function
     my $pid = spawn 'command', 'arg1', 'arg2'
         or die "failed to spawn: $!";
     waitpid $pid, 0;
+    die "command failed with status: ", $?>>8 if $?;
 
 =head1 DESCRIPTION
 
