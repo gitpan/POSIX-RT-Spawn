@@ -4,6 +4,7 @@
 #include "perl.h"
 #include "XSUB.h"
 
+#define NEED_my_strlcat
 #define NEED_my_strlcpy
 #include "ppport.h"
 
@@ -13,7 +14,6 @@ extern char **environ;
 
 Pid_t
 do_posix_spawn (const char *cmd, char **argv) {
-    int ret;
     Pid_t pid;
     posix_spawnattr_t attr;
     short flags = 0;
